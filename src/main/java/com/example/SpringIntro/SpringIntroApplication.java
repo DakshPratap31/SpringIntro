@@ -1,6 +1,7 @@
 package com.example.SpringIntro;
 
 import com.example.SpringIntro.Components.DemoBean;
+import com.example.SpringIntro.Components.EmployeeBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -17,6 +18,11 @@ public class SpringIntroApplication {
 		logger.debug("Checking Context:{}",context.getBean(DemoBean .class));
 
 		logger.debug("\n*** Example using @Autowire annotation on property ***");
+
+		EmployeeBean employeeBean=context.getBean(EmployeeBean.class);
+		employeeBean.setEid(104);
+		employeeBean.setEname("Spring Framework Guru");
+		employeeBean.showEmployeeDetails();
 	}
 
 
